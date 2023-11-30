@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 @AllArgsConstructor
 public class ReaderThread extends Thread{
+    private final int id;
     private final MessageQueue queue;
     private final List<String> filesList;
 

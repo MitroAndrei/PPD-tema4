@@ -1,6 +1,7 @@
 package threads;
 
-import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -84,4 +85,16 @@ public class ParticipantsList {
         return true;
     }
 
+    public void printToFile(String filename) {
+        try (FileWriter fileWriter = new FileWriter(filename)) {
+            Node node = head;
+            while (node != null) {
+                fileWriter.write(node.getEntry().toString() + "\n");
+                node = node.getNext();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

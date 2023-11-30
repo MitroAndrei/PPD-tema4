@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileNameGenerator {
-    private int nrThreads;
-    private List<String> filesList;
+    private final int nrThreads;
+    private final List<String> filesList;
 
     public FileNameGenerator(int nrThreads) {
         this.nrThreads = nrThreads;

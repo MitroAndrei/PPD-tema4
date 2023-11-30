@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class WorkerThread extends Thread{
+    private final int id;
     private final MessageQueue queue;
     private final ParticipantsList participantsList;
 
