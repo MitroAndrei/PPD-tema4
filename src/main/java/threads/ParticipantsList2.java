@@ -55,18 +55,20 @@ public class ParticipantsList2 {
     }
 
     private void remove(Node participant) {
-        synchronized (lock){
-            if(participant.getPrevious() == null){
+        synchronized (lock) {
+            if (participant.getPrevious() == null) {
                 head = participant.getNext();
-                if(head != null){
+                if (head != null) {
                     head.setPrevious(null);
                 }
-            }else{
+            } else {
                 participant.getPrevious().setNext(participant.getNext());
-                if(participant.getNext() != null){
+                if (participant.getNext() != null) {
                     participant.getNext().setPrevious(participant.getPrevious());
                 }
             }
+            participant.setNext(null);
+            participant.setPrevious(null);
         }
     }
 

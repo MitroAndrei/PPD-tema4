@@ -4,7 +4,7 @@ import java.io.FileWriter;
 
 public class FileCreator {
     public static void main(String[] args) {
-        int nrParticipants = 5;
+        int nrParticipants = 85;
         for (int i = 1; i <= 5; i++) {
             for (int j = 1; j <= 10; j++) {
                 try {
@@ -12,9 +12,9 @@ public class FileCreator {
                     for (int k = 1; k <= nrParticipants; k++) {
                         int id  = (i-1)*nrParticipants + k;
                         int sign = Math.random() < 0.1 ? -1 : 1;
-                        int score = sign*id;
+                        int score = sign*(int)(Math.random()*10+1);
                         if(sign == -1){
-                            myWriter.write(id+" "+score+"\n");
+                            myWriter.write(id+" "+sign+"\n");
                         }
                         else{
 //                            myWriter.write(id+" "+(int)(Math.random()*10+1)+"\n");

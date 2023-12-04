@@ -5,8 +5,8 @@ import threads.*;
 public class Main {
     public static void main(String[] args) {
         while (true) {
-            int totalThreads = 4;
-            int readThreads = 2;
+            int totalThreads = 8;
+            int readThreads = 1;
             FileNameGenerator fileNameGenerator = new FileNameGenerator(readThreads);
             MessageQueue messageQueue = new MessageQueue(readThreads);
             ParticipantsList2 participantsList = new ParticipantsList2();
@@ -26,8 +26,11 @@ public class Main {
                     throw new RuntimeException(e);
                 }
             }
-            String filename = "Rezultate.txt";
+            String filename = "Parallel.txt";
             participantsList.printToFile(filename);
+            Test test = new Test();
+            test.readSequential("Sequential.txt");
+            test.readParallel("Parallel.txt");
             break;
         }
 
