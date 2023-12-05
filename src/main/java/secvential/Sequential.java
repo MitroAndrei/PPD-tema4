@@ -22,7 +22,7 @@ public class Sequential {
     private void readFromFile(String file){
         Scanner scanner = new Scanner(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(file)));
         while(scanner.hasNextLine()){
-            System.out.println("Reading from " + file);
+//            System.out.println("Reading from " + file);
             String line = scanner.nextLine();
             String[] tokens = line.split(" ");
             int id = Integer.parseInt(tokens[0]);

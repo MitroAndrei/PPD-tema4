@@ -18,7 +18,7 @@ public class ReaderThread extends Thread{
             readFromFile(file);
         }
         queue.setReadersFinished(id);
-        System.out.println("Reader " + id + " finished reading");
+//        System.out.println("Reader " + id + " finished reading");
     }
 
     private void readFromFile(String file){

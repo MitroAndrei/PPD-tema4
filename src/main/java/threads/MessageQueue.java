@@ -55,7 +55,7 @@ public class MessageQueue {
     public boolean shouldWait(){
         synchronized (queue) {
             if(!isWorking){
-                System.out.println(!queue.isEmpty());
+//                System.out.println(!queue.isEmpty());
                 return false;
             }
             else {

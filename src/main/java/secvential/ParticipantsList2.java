@@ -11,10 +11,10 @@ public class ParticipantsList2 {
     private final List<Integer> blackList = new LinkedList<>();
 
     public void insert(Entry entry) {
-        System.out.println("Inserting " + entry.getId() + " " + entry.getScore());
-        printList();
+//        System.out.println("Inserting " + entry.getId() + " " + entry.getScore());
+//        printList();
         Node participant = findNode(entry.getId());
-        System.out.println("Found " + participant);
+//        System.out.println("Found " + participant);
         if (cheater(participant, entry)) {
             return;
         }
@@ -31,7 +31,7 @@ public class ParticipantsList2 {
             if (!needsReorder(participant)) {
                 return;
             }
-            System.out.println("Reordering" + participant.getEntry().getScore() + " " + participant.getPrevious().getEntry().getScore() + " " + participant.getEntry().getId() + " " + participant.getPrevious().getEntry().getId());
+//            System.out.println("Reordering" + participant.getEntry().getScore() + " " + participant.getPrevious().getEntry().getScore() + " " + participant.getEntry().getId() + " " + participant.getPrevious().getEntry().getId());
             remove(participant);
             Node place = findPlace(participant.getEntry());
             insertAfter(place, participant);
@@ -53,17 +53,17 @@ public class ParticipantsList2 {
     }
 
     private void remove(Node participant) {
-        System.out.println("Removing " + participant.getEntry().getId());
+//        System.out.println("Removing " + participant.getEntry().getId());
         if (participant.getPrevious() == null) {
             head = participant.getNext();
             if (head != null) {
                 head.setPrevious(null);
             }
         } else {
-            System.out.println("Previous " + participant.getPrevious().getEntry().getId());
+//            System.out.println("Previous " + participant.getPrevious().getEntry().getId());
             participant.getPrevious().setNext(participant.getNext());
             if (participant.getNext() != null) {
-                System.out.println("Next " + participant.getNext().getEntry().getId());
+//                System.out.println("Next " + participant.getNext().getEntry().getId());
                 participant.getNext().setPrevious(participant.getPrevious());
             }
         }
@@ -83,15 +83,15 @@ public class ParticipantsList2 {
 
     private void insertAfter(Node place, Node participant) {
         if (place == null) {
-            System.out.println("Inserting at head");
-            System.out.println("Head " + head.getEntry().getId());
-            System.out.println("Participant " + participant.getEntry().getId());
+//            System.out.println("Inserting at head");
+//            System.out.println("Head " + head.getEntry().getId());
+//            System.out.println("Participant " + participant.getEntry().getId());
             participant.setNext(head);
             head.setPrevious(participant);
             head = participant;
         } else {
-            System.out.println("Inserting after " + place.getEntry().getId());
-            System.out.println("Participant " + participant.getEntry().getId());
+//            System.out.println("Inserting after " + place.getEntry().getId());
+//            System.out.println("Participant " + participant.getEntry().getId());
             if (place.getNext() != null) {
                 place.getNext().setPrevious(participant);
             }

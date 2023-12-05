@@ -21,7 +21,7 @@ public class WorkerThread extends Thread{
             try {
                 Entry entry = queue.take(this.id);
                 if(entry == null){
-                    System.out.println("Worker " + id + " score " + sc);
+//                    System.out.println("Worker " + id + " score " + sc);
                     break;
                 }
                 sc++;
